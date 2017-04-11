@@ -1,0 +1,6 @@
+framework module Pods_aChat {
+  umbrella header "Pods-aChat-umbrella.h"
+
+  export *
+  module * { export * }
+}
