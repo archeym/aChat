@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2156BDAC1E9E5559004155E3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2156BDAB1E9E5559004155E3 /* Extensions.swift */; };
+		2156BDAE1E9E55F4004155E3 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2156BDAD1E9E55F4004155E3 /* Messages.swift */; };
+		2156BDB11E9E58EC004155E3 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2156BDB01E9E58EC004155E3 /* UserCell.swift */; };
+		2170A0C81E9E02FD00A54784 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2170A0C71E9E02FD00A54784 /* NewMessageController.swift */; };
+		2170A0CA1E9E0BBD00A54784 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2170A0C91E9E0BBD00A54784 /* User.swift */; };
+		2170A0CD1E9E1C1700A54784 /* LoginController+handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2170A0CC1E9E1C1700A54784 /* LoginController+handlers.swift */; };
 		21FF3FF91E9CA64E0094483A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FF3FF81E9CA64E0094483A /* AppDelegate.swift */; };
-		21FF3FFB1E9CA64E0094483A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FF3FFA1E9CA64E0094483A /* ViewController.swift */; };
+		21FF3FFB1E9CA64E0094483A /* MessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FF3FFA1E9CA64E0094483A /* MessagesController.swift */; };
 		21FF3FFE1E9CA64E0094483A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21FF3FFC1E9CA64E0094483A /* Main.storyboard */; };
 		21FF40001E9CA64E0094483A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21FF3FFF1E9CA64E0094483A /* Assets.xcassets */; };
 		21FF40031E9CA64E0094483A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21FF40011E9CA64E0094483A /* LaunchScreen.storyboard */; };
@@ -19,9 +25,15 @@
 
 /* Begin PBXFileReference section */
 		1BC855BC283C6EB50C2CD7F4 /* Pods-aChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-aChat/Pods-aChat.debug.xcconfig"; sourceTree = "<group>"; };
+		2156BDAB1E9E5559004155E3 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2156BDAD1E9E55F4004155E3 /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		2156BDB01E9E58EC004155E3 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		2170A0C71E9E02FD00A54784 /* NewMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
+		2170A0C91E9E0BBD00A54784 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2170A0CC1E9E1C1700A54784 /* LoginController+handlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoginController+handlers.swift"; sourceTree = "<group>"; };
 		21FF3FF51E9CA64E0094483A /* aChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21FF3FF81E9CA64E0094483A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		21FF3FFA1E9CA64E0094483A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		21FF3FFA1E9CA64E0094483A /* MessagesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesController.swift; sourceTree = "<group>"; };
 		21FF3FFD1E9CA64E0094483A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		21FF3FFF1E9CA64E0094483A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21FF40021E9CA64E0094483A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -44,6 +56,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2156BDAF1E9E58BC004155E3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2156BDB01E9E58EC004155E3 /* UserCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2170A0CB1E9E1AD500A54784 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2156BDAB1E9E5559004155E3 /* Extensions.swift */,
+				2170A0C91E9E0BBD00A54784 /* User.swift */,
+				2156BDAD1E9E55F4004155E3 /* Messages.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		21FF3FEC1E9CA64E0094483A = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +95,8 @@
 		21FF3FF71E9CA64E0094483A /* aChat */ = {
 			isa = PBXGroup;
 			children = (
+				2156BDAF1E9E58BC004155E3 /* View */,
+				2170A0CB1E9E1AD500A54784 /* Model */,
 				21FF400A1E9CAA750094483A /* Controller */,
 				21FF3FF81E9CA64E0094483A /* AppDelegate.swift */,
 				21FF3FFC1E9CA64E0094483A /* Main.storyboard */,
@@ -79,7 +111,9 @@
 		21FF400A1E9CAA750094483A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				21FF3FFA1E9CA64E0094483A /* ViewController.swift */,
+				2170A0CC1E9E1C1700A54784 /* LoginController+handlers.swift */,
+				21FF3FFA1E9CA64E0094483A /* MessagesController.swift */,
+				2170A0C71E9E02FD00A54784 /* NewMessageController.swift */,
 				21FF400B1E9CAAA30094483A /* LoginViewController.swift */,
 			);
 			name = Controller;
@@ -227,9 +261,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2170A0C81E9E02FD00A54784 /* NewMessageController.swift in Sources */,
+				2156BDAE1E9E55F4004155E3 /* Messages.swift in Sources */,
 				21FF400C1E9CAAA30094483A /* LoginViewController.swift in Sources */,
-				21FF3FFB1E9CA64E0094483A /* ViewController.swift in Sources */,
+				2170A0CD1E9E1C1700A54784 /* LoginController+handlers.swift in Sources */,
+				21FF3FFB1E9CA64E0094483A /* MessagesController.swift in Sources */,
+				2156BDB11E9E58EC004155E3 /* UserCell.swift in Sources */,
+				2170A0CA1E9E0BBD00A54784 /* User.swift in Sources */,
 				21FF3FF91E9CA64E0094483A /* AppDelegate.swift in Sources */,
+				2156BDAC1E9E5559004155E3 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +435,7 @@
 				21FF40091E9CA64E0094483A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
