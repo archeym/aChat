@@ -60,9 +60,10 @@ class LoginViewController: UIViewController {
     
     
     
-    let nameTextField : UITextField = {
+    lazy var nameTextField : UITextField = {
         let tf = UITextField()
         tf.placeholder = "Name:"
+        tf.delegate = self
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
     }()
@@ -74,9 +75,10 @@ class LoginViewController: UIViewController {
         return view
     }()
     
-    let emailTextField : UITextField = {
+    lazy var emailTextField : UITextField = {
         let tf = UITextField()
         tf.placeholder = "Email:"
+        tf.delegate = self
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.autocapitalizationType = .none
         return tf
@@ -89,9 +91,10 @@ class LoginViewController: UIViewController {
         return view
     }()
     
-    let passwordTextField : UITextField = {
+    lazy var passwordTextField : UITextField = {
         let tf = UITextField()
         tf.placeholder = "Password:"
+        tf.delegate = self
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.isSecureTextEntry = true
         return tf

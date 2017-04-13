@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2142503D1E9F81A6007311C0 /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2142503C1E9F81A6007311C0 /* ChatLogController.swift */; };
 		2156BDAC1E9E5559004155E3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2156BDAB1E9E5559004155E3 /* Extensions.swift */; };
 		2156BDAE1E9E55F4004155E3 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2156BDAD1E9E55F4004155E3 /* Messages.swift */; };
 		2156BDB11E9E58EC004155E3 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2156BDB01E9E58EC004155E3 /* UserCell.swift */; };
@@ -25,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		1BC855BC283C6EB50C2CD7F4 /* Pods-aChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-aChat/Pods-aChat.debug.xcconfig"; sourceTree = "<group>"; };
+		2142503B1E9F7196007311C0 /* aChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = aChat.entitlements; sourceTree = "<group>"; };
+		2142503C1E9F81A6007311C0 /* ChatLogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
 		2156BDAB1E9E5559004155E3 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2156BDAD1E9E55F4004155E3 /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		2156BDB01E9E58EC004155E3 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -95,11 +98,12 @@
 		21FF3FF71E9CA64E0094483A /* aChat */ = {
 			isa = PBXGroup;
 			children = (
+				2142503B1E9F7196007311C0 /* aChat.entitlements */,
 				2156BDAF1E9E58BC004155E3 /* View */,
 				2170A0CB1E9E1AD500A54784 /* Model */,
 				21FF400A1E9CAA750094483A /* Controller */,
-				21FF3FF81E9CA64E0094483A /* AppDelegate.swift */,
 				21FF3FFC1E9CA64E0094483A /* Main.storyboard */,
+				21FF3FF81E9CA64E0094483A /* AppDelegate.swift */,
 				21FF3FFF1E9CA64E0094483A /* Assets.xcassets */,
 				21FF40011E9CA64E0094483A /* LaunchScreen.storyboard */,
 				21FF400D1E9CCB8F0094483A /* GoogleService-Info.plist */,
@@ -115,6 +119,7 @@
 				21FF3FFA1E9CA64E0094483A /* MessagesController.swift */,
 				2170A0C71E9E02FD00A54784 /* NewMessageController.swift */,
 				21FF400B1E9CAAA30094483A /* LoginViewController.swift */,
+				2142503C1E9F81A6007311C0 /* ChatLogController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -171,8 +176,13 @@
 				TargetAttributes = {
 					21FF3FF41E9CA64E0094483A = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = V8T6EH88N4;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = ZQ547JDPVM;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -261,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2142503D1E9F81A6007311C0 /* ChatLogController.swift in Sources */,
 				2170A0C81E9E02FD00A54784 /* NewMessageController.swift in Sources */,
 				2156BDAE1E9E55F4004155E3 /* Messages.swift in Sources */,
 				21FF400C1E9CAAA30094483A /* LoginViewController.swift in Sources */,
@@ -393,11 +404,14 @@
 			baseConfigurationReference = 1BC855BC283C6EB50C2CD7F4 /* Pods-aChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = V8T6EH88N4;
+				CODE_SIGN_ENTITLEMENTS = aChat/aChat.entitlements;
+				DEVELOPMENT_TEAM = ZQ547JDPVM;
 				INFOPLIST_FILE = aChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ArchieApp.aChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1131043c-3af8-4a89-b6f0-5204ca714249";
+				PROVISIONING_PROFILE_SPECIFIER = "aChat - Dev";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -407,11 +421,15 @@
 			baseConfigurationReference = 4E58811A49E20D04D1C1A0AE /* Pods-aChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = V8T6EH88N4;
+				CODE_SIGN_ENTITLEMENTS = aChat/aChat.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = ZQ547JDPVM;
 				INFOPLIST_FILE = aChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ArchieApp.aChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "64e00fa2-2599-46e7-b4f0-4012849c446d";
+				PROVISIONING_PROFILE_SPECIFIER = "aChat - AppStore";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

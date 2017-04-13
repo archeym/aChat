@@ -70,6 +70,8 @@ class NewMessageController: UITableViewController {
         return 72
     }
     
+    
+    
     var messagesController: MessagesController?
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
