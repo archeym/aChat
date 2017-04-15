@@ -2,12 +2,13 @@
 //  NewMessageController.swift
 //  aChat
 //
-//  Created by Arkadijs Makarenko on 12/04/2017.
+//  Created by Arkadijs Makarenko on 11/04/2017.
 //  Copyright © 2017 ArchieApps. All rights reserved.
 //
 
 import UIKit
-import  Firebase
+import Firebase
+
 
 class NewMessageController: UITableViewController {
     
@@ -18,7 +19,7 @@ class NewMessageController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(handleCancel))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
         
         tableView.register(UserCell.self, forCellReuseIdentifier: cellId)
         
@@ -38,7 +39,6 @@ class NewMessageController: UITableViewController {
                     self.tableView.reloadData()
                 })
                 
-                //                user.name = dictionary["name"]
             }
             
         }, withCancel: nil)
@@ -70,8 +70,6 @@ class NewMessageController: UITableViewController {
         return 72
     }
     
-    
-    
     var messagesController: MessagesController?
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -83,8 +81,6 @@ class NewMessageController: UITableViewController {
     }
     
 }
-
-
 
 
 

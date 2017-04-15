@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 import FirebaseMessaging
 import UserNotifications
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.rootViewController = UINavigationController(rootViewController: MessagesController())
         registerPushNotification(application: application)
+        Fabric.with([Crashlytics.self])
+        
         return true
     }
     
@@ -92,19 +96,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate{
+    
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        let presentationOptions: UNNotificationPresentationOptions = [.alert, .sound, .badge]
-        completionHandler(presentationOptions)
+        let presentionOption : UNNotificationPresentationOptions = [.alert , .sound, .badge]
+        completionHandler(presentionOption)
     }
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
     }
-    
 }
-
-extension AppDelegate:FIRMessagingDelegate{
+extension AppDelegate: FIRMessagingDelegate{
     func applicationReceivedRemoteMessage(_ remoteMessage: FIRMessagingRemoteMessage) {
-    
+        
     }
 }
 

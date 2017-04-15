@@ -2,14 +2,14 @@
 //  LoginController+handlers.swift
 //  aChat
 //
-//  Created by Arkadijs Makarenko on 12/04/2017.
+//  Created by Arkadijs Makarenko on 11/04/2017.
 //  Copyright © 2017 ArchieApps. All rights reserved.
 //
 
 import UIKit
 import Firebase
 
-extension LoginViewController: UIImagePickerControllerDelegate, UITextFieldDelegate, UINavigationControllerDelegate {
+extension LoginViewController: UIImagePickerControllerDelegate,UITextFieldDelegate, UINavigationControllerDelegate {
     
     func handleRegister() {
         guard let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text else {
@@ -23,9 +23,11 @@ extension LoginViewController: UIImagePickerControllerDelegate, UITextFieldDeleg
                 print(error!)
                 return
             }
+            
             guard let uid = user?.uid else {
                 return
             }
+            
             //successfully authenticated user
             let imageName = UUID().uuidString
             let storageRef = FIRStorage.storage().reference().child("profile_images").child("\(imageName).jpg")
@@ -56,15 +58,15 @@ extension LoginViewController: UIImagePickerControllerDelegate, UITextFieldDeleg
                 return
             }
             
-            //  self.messagesController?.navigationItem.title = values["name"] as? String
+          //  self.messagesController?.navigationItem.title = values["name"] as? String
             let user = User(dictionary: values)
             self.messagesController?.setupNavBarWithUser(user)
             
             self.dismiss(animated: true, completion: nil)
         })
     }
-    
-    func handleSelectorProfileImage(){
+
+    func handleSelectProfileImageView() {
         let picker = UIImagePickerController()
         
         picker.delegate = self
@@ -74,18 +76,22 @@ extension LoginViewController: UIImagePickerControllerDelegate, UITextFieldDeleg
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
         var selectedImageFromPicker: UIImage?
         
-        if let editedImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+        if let editedImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
             selectedImageFromPicker = editedImage
-        }
-        else if let originalImage = info["UIImagePickerControllerOriginalImage"]as? UIImage{
+        } else if let originalImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+            
             selectedImageFromPicker = originalImage
         }
-        if let selectedImage = selectedImageFromPicker{
+        
+        if let selectedImage = selectedImageFromPicker {
             profileImageView.image = selectedImage
         }
+        
         dismiss(animated: true, completion: nil)
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -100,9 +106,4 @@ extension LoginViewController: UIImagePickerControllerDelegate, UITextFieldDeleg
         self.view.endEditing(true)
         return true
     }
-    
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        return false
-//    }
 }

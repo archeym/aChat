@@ -11,5 +11,7 @@ target 'aChat' do
   pod 'Firebase/Storage'
   pod 'Firebase/Messaging'
   pod 'Firebase/Database'
+  pod 'Fabric'
+  pod 'Crashlytics'
 
 end
